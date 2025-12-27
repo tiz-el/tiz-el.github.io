@@ -1,0 +1,102 @@
+/* Dropdown Menu Styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    /* Adjust as needed */
+    background-color: var(--white);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+/* Sub-menu items */
+.dropdown-menu li {
+    display: block;
+    margin: 0;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    color: var(--text-color);
+    /* Use dark text for dropdown items unlike white nav text */
+    font-size: 0.95rem;
+    transition: 0.2s;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.dropdown-menu li:last-child a {
+    border-bottom: none;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f9f9f9;
+    color: var(--accent-color);
+    padding-left: 25px;
+    /* Slight movement on hover */
+}
+
+/* Show on Hover (Desktop) */
+@media (min-width: 769px) {
+    .dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    /* Change arrow direction on hover */
+    .dropdown:hover .nav-link i {
+        transform: rotate(180deg);
+        transition: 0.3s;
+    }
+}
+
+.dropdown .nav-link i {
+    font-size: 0.8rem;
+    margin-left: 5px;
+    transition: 0.3s;
+}
+
+/* Mobile Dropdown Styles */
+@media (max-width: 768px) {
+    .dropdown {
+        width: 100%;
+    }
+
+    .dropdown-menu {
+        position: static;
+        /* Stack naturally in flow */
+        width: 100%;
+        box-shadow: none;
+        background-color: rgba(0, 0, 0, 0.05);
+        /* Slightly darker bg to distinguish */
+        display: none;
+        /* Hidden by default, toggled by JS/Class */
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        padding-left: 20px;
+    }
+
+    .dropdown-menu.active {
+        display: block;
+        animation: fadeIn 0.3s;
+    }
+
+    .dropdown-menu li a {
+        color: var(--white);
+        /* White text on mobile nav */
+        border-bottom: none;
+    }
+}

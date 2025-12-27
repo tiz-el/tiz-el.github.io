@@ -1,0 +1,36 @@
+/* Footer Enhancements for Contact and Hours */
+
+.contact-item-footer p {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    color: #ffffff;
+}
+
+.contact-item-footer strong {
+    color: #FFD700;
+}
+
+.footer-hours {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-hours li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: #ffffff;
+    border-bottom: 1px dotted #e0e0e0;
+    padding-bottom: 8px;
+}
+
+.footer-hours li span {
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Adjust Social Links for Footer Placement */
+.footer-column.contact-column .social-links {
+    margin-top: 20px;
+}

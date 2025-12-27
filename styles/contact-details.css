@@ -1,0 +1,52 @@
+/* Contact Details Box Styles */
+.contact-details-box {
+    margin-top: 30px;
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contact-details-box h3,
+.contact-details-box h4 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.contact-details-box h4 {
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: #555;
+    margin-top: 15px;
+}
+
+.contact-item p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.hours-table-small {
+    margin-top: 25px;
+}
+
+.day-time-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 0.95rem;
+}
+
+.day-time-row:last-child {
+    border-bottom: none;
+}
+
+.day-time-row span:last-child {
+    font-weight: 500;
+}
