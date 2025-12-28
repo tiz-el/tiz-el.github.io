@@ -62,3 +62,15 @@
 
     /* Scoll half because content is duplicated */
 }
+
+@media (max-width: 480px) {
+    .testimonial-card-item {
+        min-width: 280px;
+        width: 80vw;
+        padding: 20px;
+    }
+
+    .review-text {
+        font-size: 1rem;
+    }
+}

@@ -9,8 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Close menu when clicking a link
+    // Close menu when clicking a link (but not if it's a dropdown toggle on mobile)
     document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
+        link.addEventListener('click', (e) => {
+            // Check if this link is a dropdown toggle and we are on mobile
+            if (window.innerWidth <= 768 && link.parentElement.classList.contains('dropdown')) {
+                // Do nothing here, let the dropdown toggle handler specifically handle it
+                return;
+            }
+
             navMenu.classList.remove('active');
             mobileMenuBtn.classList.remove('active');
         });
@@ -79,6 +86,48 @@ document.addEventListener('DOMContentLoaded', () => {
                     icon.style.transform = menu.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
                 }
             });
+        });
+    }
+
+    // Auto-sliding for Services on Mobile (480px)
+    const servicesGrid = document.querySelector('.services-grid');
+    if (servicesGrid) {
+        let isPaused = false;
+        let slideIntervalId;
+
+        const startSlider = () => {
+            if (window.innerWidth <= 480) {
+                slideIntervalId = setInterval(() => {
+                    if (isPaused) return;
+
+                    const maxScroll = servicesGrid.scrollWidth - servicesGrid.clientWidth;
+                    if (servicesGrid.scrollLeft >= maxScroll - 10) {
+                        servicesGrid.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        // Scroll by approx one card width + gap
+                        servicesGrid.scrollBy({ left: 280, behavior: 'smooth' });
+                    }
+                }, 3000);
+            }
+        };
+
+        const stopSlider = () => {
+            clearInterval(slideIntervalId);
+        };
+
+        // Initial start
+        startSlider();
+
+        // Pause on touch to allow manual browsing
+        servicesGrid.addEventListener('touchstart', () => isPaused = true);
+        servicesGrid.addEventListener('touchend', () => {
+            setTimeout(() => isPaused = false, 3000);
+        });
+
+        // Re-evaluate on resize
+        window.addEventListener('resize', () => {
+            stopSlider();
+            startSlider();
         });
     }
 });

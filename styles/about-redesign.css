@@ -133,3 +133,27 @@
         /* Hide decorative dots on smaller screens to avoid clutter */
     }
 }
+
+@media (max-width: 480px) {
+    .about-section-redesign {
+        padding: 40px 0;
+    }
+
+    .about-header-centered h1 {
+        font-size: 1.8rem;
+    }
+
+    .about-header-centered p {
+        font-size: 1rem;
+    }
+
+    .about-feature-text h3 {
+        font-size: 1.5rem;
+    }
+
+    .about-feature-row {
+        gap: 30px;
+        /* Already 30px in 992px query, but safe to keep or adjust */
+        margin-bottom: 40px;
+    }
+}

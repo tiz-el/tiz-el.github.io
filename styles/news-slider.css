@@ -164,3 +164,28 @@
         -webkit-overflow-scrolling: touch;
     }
 }
+
+@media (max-width: 480px) {
+    .news-card {
+        min-width: 220px;
+        max-width: 240px;
+    }
+
+    .news-image {
+        height: 140px;
+    }
+
+    .news-content {
+        padding: 15px;
+    }
+
+    .news-content h3 {
+        font-size: 0.95rem;
+        margin-bottom: 10px;
+    }
+
+    .news-content p {
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+    }
+}
