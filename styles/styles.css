@@ -132,19 +132,36 @@ ul {
     top: 0;
     width: 100%;
     background-color: #2b3a8c;
-    padding: 15px 0;
+    height: 70px;
+    /* Fixed height to prevent expansion */
+    display: flex;
+    align-items: center;
     z-index: 1000;
-    box-shadow: 0 2px 10px #2b3a8c;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    position: left;
 }
 
 .logo img {
-    height: 40px;
+    height: 120px;
+    /* Desired large size */
+    width: auto;
+    position: absolute;
+    top: 1px;
+    /* Adjust to center vertically or allow overflow */
+    transition: var(--transition);
 }
 
 .nav-menu {
@@ -746,16 +763,20 @@ footer {
     }
 
     /* Navigation */
+    .navbar {
+        height: 60px;
+        /* Slightly smaller for mobile */
+        padding: 0;
+    }
+
     .logo img {
-        height: 35px;
+        height: 65px;
+        /* Scaled down logo for mobile but still large */
+        top: -2px;
     }
 
     .nav-menu {
         top: 60px;
-    }
-
-    .navbar {
-        padding: 10px 0;
     }
 
     /* Services */

@@ -41,11 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            navbar.style.backgroundColor = 'rgba(0, 31, 63, 1)';
-            navbar.style.padding = '10px 0';
+            navbar.style.backgroundColor = 'rgba(0, 31, 63, 1)'; // Solid navy on scroll
         } else {
-            navbar.style.backgroundColor = 'rgba(0, 31, 63, 0.95)';
-            navbar.style.padding = '15px 0';
+            navbar.style.backgroundColor = ''; // Revert to CSS default (#2b3a8c)
         }
     });
 
