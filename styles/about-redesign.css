@@ -69,6 +69,7 @@
     font-family: 'Intro', sans-serif;
     /* Fallback if not avail */
     font-weight: 700;
+    color: bisque;
     font-style: italic;
     /* Slight italic style often used in sports headers */
 }
